@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Email</title>
+</head>
+<body>
+    <h2>Send Email</h2>
+    <form action="send_email.php" method="post">
+        <div id="toContainer">
+            <label for="to">To:</label>
+            <input type="email" name="to[]" placeholder="Enter recipient email" required>
+        </div>
+        <button type="button" onclick="addEmailField('to')">Add To</button>
+        <br><br>
+
+        <div id="ccContainer">
+            <label for="cc">CC:</label>
+            <input type="email" name="cc[]" placeholder="Enter CC email">
+        </div>
+        <button type="button" onclick="addEmailField('cc')">Add CC</button>
+        <br><br>
+
+        <div id="bccContainer">
+            <label for="bcc">BCC:</label>
+            <input type="email" name="bcc[]" placeholder="Enter BCC email">
+        </div>
+        <button type="button" onclick="addEmailField('bcc')">Add BCC</button>
+        <br><br>
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="10" cols="30" required></textarea><br><br>
+
+        <input type="submit" value="Send Email">
+    </form>
+    <script>
+        function addEmailField(type) {
+            const container = document.getElementById(type + 'Container');
+            const input = document.createElement('input');
+            input.type = 'email';
+            input.name = type + '[]';
+            input.placeholder = 'Enter ' + type + ' email';
+            container.appendChild(input);
+        }
+    </script>
+</body>
+</html>
