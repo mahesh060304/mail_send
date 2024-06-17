@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Send Email</title>
     <!-- <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script> -->
+   
 </head>
 <body>
     <h2>Send Email</h2>
@@ -50,8 +51,15 @@
 
         <input type="submit" value="Send Email">
     </form>
-    <!-- <script>
-        CKEDITOR.replace('body');
-    </script> -->
+    <script>
+        function addEmailField(type) {
+            const container = document.getElementById(type + 'Container');
+            const input = document.createElement('input');
+            input.type = 'email';
+            input.name = type + '[]';
+            input.placeholder = 'Enter ' + type + ' email';
+            container.appendChild(input);
+        }
+    </script>
 </body>
 </html>
