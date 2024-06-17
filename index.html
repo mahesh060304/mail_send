@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Send Email</title>
+    <!-- <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script> -->
 </head>
 <body>
     <h2>Send Email</h2>
@@ -29,23 +30,28 @@
         <button type="button" onclick="addEmailField('bcc')">Add BCC</button>
         <br><br>
 
-        <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject" required><br><br>
+        <select id="template" name="template" required>
+            <option value="mentor">Mentor</option>
+            <option value="bootcamp">Bootcamp</option>
+            <option value="course_approve">course_approve</option>
+            <option value="forget">forget</option>
+            <option value="job_alert">job_alert</option>
+            <option value="landing">landing</option>
+            <option value="mentor_video">mentor_video</option>
+            <option value="refer">refer</option>
+            <option value="Reject">reject</option>
+            <option value="task_approve">task_approve</option>
+            <option value="task_approved">task_approved</option>
+            <option value="user_feedback">user_feedback</option>
 
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="10" cols="30" required></textarea><br><br>
+            
+
+        </select><br><br>
 
         <input type="submit" value="Send Email">
     </form>
-    <script>
-        function addEmailField(type) {
-            const container = document.getElementById(type + 'Container');
-            const input = document.createElement('input');
-            input.type = 'email';
-            input.name = type + '[]';
-            input.placeholder = 'Enter ' + type + ' email';
-            container.appendChild(input);
-        }
-    </script>
+    <!-- <script>
+        CKEDITOR.replace('body');
+    </script> -->
 </body>
 </html>
